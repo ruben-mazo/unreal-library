@@ -3,13 +3,13 @@
 #pragma once
 
 #include "CharacterBase.h"
-#include "FirstPersonCharacter.generated.h"
+#include "PlayerCharacter.generated.h"
 
 /**
- * @brief A base class for a first person character. It contains bindings for the basic movement and camera.
+ * @brief A base class for a player character. It contains bindings for the basic movement and camera.
  */
 UCLASS()
-class UNREALLIBRARY_API AFirstPersonCharacter : public ACharacterBase
+class UNREALLIBRARY_API APlayerCharacter : public ACharacterBase
 {
 	GENERATED_BODY()
 
