@@ -2,31 +2,26 @@
 
 #pragma once
 
+#include "Engine/DataTable.h"
 #include "ItemData.generated.h"
 
 /**
  * @brief A base structure for items data.
  */
-USTRUCT()
-struct UNREALLIBRARY_API FItemData
+USTRUCT(BlueprintType)
+struct UNREALLIBRARY_API FItemData : public FTableRowBase
 {
 	GENERATED_BODY()
-	
-	/**
-	 * @brief The unique ID of the item. Only this item should have this ID.
-	 */
-	UPROPERTY(VisibleAnywhere)
-	FName ID;
 
 	/**
-	 * @brief The display name of the item. It does not need to be unique.
+	 * @brief The display name of the item.
 	 */
-	UPROPERTY(EditAnywhere, Category="Item")
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Item")
 	FText Name;
 
 	/**
 	 * @brief A brief description of the item.
 	 */
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Item")
 	FText Description;
 };

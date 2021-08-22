@@ -2,6 +2,7 @@
 
 #pragma once
 
+#include "Engine/DataTable.h"
 #include "GameFramework/Actor.h"
 #include "Item.generated.h"
 
@@ -12,6 +13,10 @@ UCLASS()
 class UNREALLIBRARY_API AItem : public AActor
 {
 	GENERATED_BODY()
+
+protected:
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Item")
+	FDataTableRowHandle ItemReference;
 
 public:
 	/**
