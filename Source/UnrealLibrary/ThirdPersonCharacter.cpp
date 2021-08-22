@@ -2,7 +2,6 @@
 
 
 #include "ThirdPersonCharacter.h"
-
 #include "GameFramework/CharacterMovementComponent.h"
 
 AThirdPersonCharacter::AThirdPersonCharacter() : APlayerCharacter()

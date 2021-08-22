@@ -2,7 +2,6 @@
 
 
 #include "Item.h"
-
 #include "GameFramework/Character.h"
 
 // Sets default values
