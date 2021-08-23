@@ -4,7 +4,6 @@
 #include "Item.h"
 #include "GameFramework/Character.h"
 
-// Sets default values
 AItem::AItem()
 {
 	PrimaryActorTick.bCanEverTick = true;
@@ -23,5 +22,15 @@ void AItem::NotifyActorBeginOverlap(AActor* OtherActor)
 
 void AItem::CharacterBeginOverlap(ACharacter* Character)
 {
-	GEngine->AddOnScreenDebugMessage(-1,1, FColor::White, "Overlap!");
+	GEngine->AddOnScreenDebugMessage(-1, 1, FColor::White, "Overlap!");
+}
+
+FItemData AItem::GetItemData()
+{
+	FItemData ItemData = FItemData();
+	if (ItemReference.DataTable != nullptr && !ItemReference.RowName.IsNone())
+	{
+		ItemData = *ItemReference.GetRow<FItemData>("");
+	}
+	return ItemData;
 }

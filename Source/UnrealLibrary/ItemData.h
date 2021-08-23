@@ -17,11 +17,11 @@ struct UNREALLIBRARY_API FItemData : public FTableRowBase
 	 * @brief The display name of the item.
 	 */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Item")
-	FText Name;
+	FText Name = FText::FromString("NO_NAME");
 
 	/**
 	 * @brief A brief description of the item.
 	 */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Item")
-	FText Description;
+	FText Description = FText::FromString("NO_DESCRIPTION");
 };

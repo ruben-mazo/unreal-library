@@ -2,6 +2,7 @@
 
 #pragma once
 
+#include "ItemData.h"
 #include "Engine/DataTable.h"
 #include "GameFramework/Actor.h"
 #include "Item.generated.h"
@@ -15,7 +16,10 @@ class UNREALLIBRARY_API AItem : public AActor
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Item")
+	/**
+	 * @brief A reference to the item in the items database. This will fill the item data when spawned.
+	 */
+	UPROPERTY(EditAnywhere, Category="Item")
 	FDataTableRowHandle ItemReference;
 
 public:
@@ -27,5 +31,13 @@ public:
 	virtual void NotifyActorBeginOverlap(AActor* OtherActor) override;
 
 protected:
+	/**
+	 * @brief Called when the item overlaps a character.
+	 * @param Character The overlapped character.
+	 */
 	virtual void CharacterBeginOverlap(ACharacter* Character);
+
+private:
+	UFUNCTION(BlueprintPure, Category="Item")
+	FItemData GetItemData();
 };
